@@ -1,6 +1,6 @@
 {
-  "name": "openclaw-memory",
-  "version": "0.1.0",
+  "name": "@poprobertdaniel/openclaw-memory",
+  "version": "0.1.1",
   "description": "Triple-layer memory system for AI agents — SQLite + Qdrant + Postgres/AGE",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -66,22 +66,22 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/openclaw/openclaw-memory"
+    "url": "https://github.com/robipop22/openclaw-memory"
   },
-  "homepage": "https://github.com/openclaw/openclaw-memory#readme",
+  "homepage": "https://github.com/robipop22/openclaw-memory#readme",
   "bugs": {
-    "url": "https://github.com/openclaw/openclaw-memory/issues"
+    "url": "https://github.com/robipop22/openclaw-memory/issues"
   },
   "engines": {
     "node": ">=20.0.0"
   },
   "dependencies": {
-    "elysia": "^1.2.0",
     "@elysiajs/cors": "^1.2.0",
-    "openai": "^4.80.0",
-    "uuid": "^11.1.0",
     "commander": "^13.0.0",
-    "picocolors": "^1.1.0"
+    "elysia": "^1.2.0",
+    "openai": "^4.80.0",
+    "picocolors": "^1.1.0",
+    "uuid": "^11.1.0"
   },
   "optionalDependencies": {
     "better-sqlite3": "^11.0.0"
