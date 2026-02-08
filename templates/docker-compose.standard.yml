@@ -1,0 +1,26 @@
+# openclaw-memory — Standard tier infrastructure
+# SQLite (local) + Qdrant (Docker)
+#
+# Usage:
+#   docker compose -f standard.yml up -d
+
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.12.0
+    container_name: openclaw-memory-qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    environment:
+      QDRANT__SERVICE__GRPC_PORT: 6334
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6333/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  qdrant_data:
