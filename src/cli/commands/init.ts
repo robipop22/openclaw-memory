@@ -98,7 +98,7 @@ export function initCommand(): Command {
 
 function generateConfig(tier: string, sqlitePath: string): string {
   const lines = [
-    `import { defineConfig } from 'openclaw-memory';`,
+    `import { defineConfig } from '@poprobertdaniel/openclaw-memory';`,
     ``,
     `export default defineConfig({`,
     `  tier: '${tier}',`,

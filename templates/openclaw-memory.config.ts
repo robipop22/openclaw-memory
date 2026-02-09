@@ -1,4 +1,4 @@
-import { defineConfig } from 'openclaw-memory';
+import { defineConfig } from '@poprobertdaniel/openclaw-memory';
 
 export default defineConfig({
   // Tier: 'lite' (SQLite only), 'standard' (+Qdrant), 'full' (+Qdrant+AGE)

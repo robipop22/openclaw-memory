@@ -5,7 +5,7 @@
 **Triple-layer memory for AI agents.**
 Local cache · Semantic search · Knowledge graph
 
-[![npm version](https://img.shields.io/npm/v/openclaw-memory)](https://www.npmjs.com/package/openclaw-memory)
+[![npm version](https://img.shields.io/npm/v/@poprobertdaniel/openclaw-memory)](https://www.npmjs.com/package/@poprobertdaniel/openclaw-memory)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://www.typescriptlang.org/)
 [![Bun](https://img.shields.io/badge/Bun-%E2%89%A51.0-black)](https://bun.sh/)
@@ -375,7 +375,7 @@ docker compose -f node_modules/openclaw-memory/docker/full.yml up -d
 
 ```bash
 # Clone
-git clone https://github.com/openclaw/openclaw-memory.git
+git clone https://github.com/robipop22/openclaw-memory.git
 cd openclaw-memory
 
 # Install
