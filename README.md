@@ -23,7 +23,7 @@ openclaw-memory is a standalone memory service with three storage layers — **S
 Start with zero dependencies (SQLite only). Scale to vectors and graphs when ready.
 
 ```ts
-import { MemoryService } from 'openclaw-memory';
+import { MemoryService } from '@poprobertdaniel/openclaw-memory';
 
 const memory = new MemoryService({ tier: 'lite' });
 await memory.init();
@@ -85,19 +85,19 @@ const results = await memory.search({
 ### 1. Install
 
 ```bash
-bun add openclaw-memory
+bun add @poprobertdaniel/openclaw-memory
 # or
-npm install openclaw-memory
+npm install @poprobertdaniel/openclaw-memory
 ```
 
 ### 2. Initialize
 
 ```bash
 # Interactive setup wizard
-npx openclaw-memory init
+npx @poprobertdaniel/openclaw-memory init
 
 # Or start immediately with defaults (Lite mode)
-npx openclaw-memory start
+npx @poprobertdaniel/openclaw-memory start
 ```
 
 ### 3. Use the CLI
@@ -117,7 +117,7 @@ openclaw-memory status
 ### 4. Or use the programmatic API
 
 ```ts
-import { MemoryService } from 'openclaw-memory';
+import { MemoryService } from '@poprobertdaniel/openclaw-memory';
 
 const memory = new MemoryService({
   tier: 'lite',
@@ -286,7 +286,7 @@ All endpoints accept/return JSON. Authentication via `Authorization: Bearer <tok
 Create `openclaw-memory.config.ts` in your project root:
 
 ```ts
-import { defineConfig } from 'openclaw-memory';
+import { defineConfig } from '@poprobertdaniel/openclaw-memory';
 
 export default defineConfig({
   tier: 'standard',
