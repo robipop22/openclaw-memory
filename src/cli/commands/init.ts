@@ -123,7 +123,7 @@ function generateConfig(tier: string, sqlitePath: string): string {
     lines.push(`  },`);
     lines.push(`  extraction: {`);
     lines.push(`    apiKey: process.env.OPENAI_API_KEY || '',`);
-    lines.push(`    model: 'gpt-4o-mini',`);
+    lines.push(`    model: 'gpt-5-nano',`);
     lines.push(`    enabled: true,`);
     lines.push(`  },`);
   }
@@ -171,7 +171,7 @@ function generateEnvExample(tier: string): string {
     lines.push(`# EMBEDDING_BASE_URL=https://api.openai.com/v1`);
     lines.push(``);
     lines.push(`# Entity extraction`);
-    lines.push(`# EXTRACTION_MODEL=gpt-4o-mini`);
+    lines.push(`# EXTRACTION_MODEL=gpt-5-nano`);
     lines.push(``);
   }
 

@@ -308,7 +308,7 @@ export default defineConfig({
   },
   extraction: {
     apiKey: process.env.OPENAI_API_KEY,
-    model: 'gpt-4o-mini',
+    model: 'gpt-5-nano',
     enabled: true,
   },
 });
@@ -345,6 +345,18 @@ PGDATABASE=agent_memory
 ```
 
 ### Docker Compose
+
+### Defaults
+
+| Setting | Default | Override |
+|---------|---------|----------|
+| Port | `7777` | `OPENCLAW_MEMORY_PORT` |
+| SQLite path | `~/.openclaw-memory/memory.sqlite` | `SQLITE_PATH` |
+| Qdrant collection | `openclaw_memories` | `QDRANT_COLLECTION` |
+| AGE graph | `agent_memory` | `AGE_GRAPH` |
+| Embedding model | `text-embedding-3-small` (1536 dims) | `EMBEDDING_MODEL` |
+| Entity extraction model | `gpt-5-nano` | `EXTRACTION_MODEL` |
+| Auth | enabled | `MEMORY_AUTH_TOKEN` |
 
 For Standard and Full tiers, use the included Docker templates:
 

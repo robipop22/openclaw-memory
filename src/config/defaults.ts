@@ -18,7 +18,7 @@ export const DEFAULTS = {
     dimensions: 1536,
   },
   extraction: {
-    model: "gpt-4o-mini",
+    model: "gpt-5-nano",
     enabled: true,
   },
   auth: {

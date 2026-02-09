@@ -32,7 +32,7 @@ export default defineConfig({
   // },
   // extraction: {
   //   apiKey: process.env.OPENAI_API_KEY || '',
-  //   model: 'gpt-4o-mini',
+  //   model: 'gpt-5-nano',
   //   enabled: true,
   // },
 
