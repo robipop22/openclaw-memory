@@ -56,7 +56,8 @@ interface StmtAdapter {
 
 function createDatabase(dbPath: string): DbAdapter {
   // Bun: use bun:sqlite
-  if (typeof globalThis.Bun !== "undefined") {
+  const bun = (globalThis as typeof globalThis & { Bun?: unknown }).Bun;
+  if (typeof bun !== "undefined") {
     // In Bun, require() is available globally
     const req = createRequire(import.meta.url);
     const { Database } = req("bun:sqlite") as {

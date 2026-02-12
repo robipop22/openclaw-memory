@@ -7,11 +7,14 @@ import type { CreateMemoryRequest, MigrateMarkdownRequest } from "../core/types.
 // ── Admin Routes ────────────────────────────────────────────────────────
 
 export function adminRoutes(orchestrator: StorageOrchestrator) {
+  const healthHandler = async () => {
+    return await orchestrator.healthCheck();
+  };
+
   return new Elysia()
-    // GET /api/health — Health check
-    .get("/api/health", async () => {
-      return await orchestrator.healthCheck();
-    })
+    // GET /api/health and /health — Health checks
+    .get("/api/health", healthHandler)
+    .get("/health", healthHandler)
 
     // POST /api/sync/retry — Retry failed L2/L3 syncs
     .post("/api/sync/retry", async ({ set }) => {

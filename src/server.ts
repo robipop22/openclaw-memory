@@ -47,8 +47,8 @@ async function main() {
 function isMainModule(): boolean {
   try {
     // Bun runtime
-    if (typeof globalThis.Bun !== "undefined") {
-      const bun = globalThis.Bun as { main?: string };
+    const bun = (globalThis as typeof globalThis & { Bun?: { main?: string } }).Bun;
+    if (typeof bun !== "undefined") {
       return bun.main === fileURLToPath(import.meta.url);
     }
     // Node.js

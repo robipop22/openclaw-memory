@@ -18,7 +18,7 @@ export function createApp(orchestrator: StorageOrchestrator, config: ResolvedCon
     // ── Auth Middleware ────────────────────────────────────────────────
     .derive(({ headers, set, path }) => {
       // Skip auth for health check
-      if (path === "/api/health") return {};
+      if (path === "/api/health" || path === "/health") return {};
 
       // Skip auth if disabled
       if (!config.auth.enabled || !config.auth.token) return {};
@@ -68,6 +68,14 @@ export function createApp(orchestrator: StorageOrchestrator, config: ResolvedCon
         const msg = error && "message" in error ? (error as Error).message : String(error);
         set.status = 400;
         return { error: "Validation error", details: msg };
+      }
+
+      // Elysia built-in not found errors
+      if (code === "NOT_FOUND") {
+        const msg =
+          error && "message" in error ? (error as Error).message : "Route not found";
+        set.status = 404;
+        return { error: msg, code };
       }
 
       // Unknown errors
